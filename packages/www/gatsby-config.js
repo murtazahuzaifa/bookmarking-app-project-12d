@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: ``,
-        description: ``,
+        title: `Bookmarking App`,
+        description: `this is a bookmarking app to bookmark your favourite website's url`,
         author: `Murtaza Hanzala`,
     },
     plugins: [

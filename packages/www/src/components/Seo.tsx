@@ -38,7 +38,7 @@ const SEO: FC<Props> = ({ propMetaDescription, lang = 'en', meta = [], link = []
       title={title || site.siteMetadata.title}
 
       link={[
-        { rel: 'icon', href: "" },
+        { rel: 'icon', href: "https://freeiconshop.com/wp-content/uploads/edd/bookmark-alt-flat.png" },
         ...link
       ]}
 
