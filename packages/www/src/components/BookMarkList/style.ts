@@ -40,6 +40,11 @@ export const DetailsWrap = styled.div`
         margin-top: 3px;
         font-size: medium;
     }
+    >a{
+        margin-top: 3px;
+        font-size: medium;
+        text-decoration:none;
+    }
 `
 
 export const DeletBtn = styled.button`

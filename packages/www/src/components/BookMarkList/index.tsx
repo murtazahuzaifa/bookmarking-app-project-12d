@@ -3,6 +3,7 @@ import * as s from './style';
 // import { BooKMark } from '../../pages/index';
 
 export interface BooKMark {
+    __typename?: string,
     id: string,
     ts: number,
     name: string,
@@ -11,9 +12,9 @@ export interface BooKMark {
 
 export interface Props {
     bookMarks?: BooKMark[],
-    onDeleteTodo?: (id: BooKMark['id']) => void,
+    onDeleteBookmark?: (id: BooKMark['id']) => void,
 };
-const BookMarkList: FC<Props> = ({ bookMarks = [], onDeleteTodo }) => {
+const BookMarkList: FC<Props> = ({ bookMarks = [], onDeleteBookmark }) => {
     return (
         <s.Wrapper>
             <div>
@@ -21,13 +22,20 @@ const BookMarkList: FC<Props> = ({ bookMarks = [], onDeleteTodo }) => {
                 {/* <s.RefreshBtn onClick={()=>{onUpdate && onUpdate()}} /> */}
             </div>
             {
-                bookMarks.map((bookMark, idx) => {
+                bookMarks.reverse().map((bookMark, idx) => {
+                    let url: URL;
+                    try { url = new URL(bookMark.url) }
+                    catch (err) { url = err }
                     return <s.BookMarkWrap key={idx} _id={idx} >
                         <s.DetailsWrap>
                             <h3>{bookMark.name}</h3>
-                            <p>{bookMark.url}</p>
+                            {
+                                url.origin === "null" ?
+                                    <p>{bookMark.url}</p> :
+                                    <a href={url.origin} target='_blank' >{bookMark.url}</a>
+                            }
                         </s.DetailsWrap>
-                        <s.DeletBtn onClick={() => { onDeleteTodo && onDeleteTodo(bookMark.id) }} >Delete</s.DeletBtn>
+                        <s.DeletBtn onClick={() => { onDeleteBookmark && onDeleteBookmark(bookMark.id) }} >Delete</s.DeletBtn>
                     </s.BookMarkWrap>
                 })
             }

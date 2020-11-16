@@ -10,9 +10,11 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@apollo/client": "^3.2.5",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
     "babel-plugin-styled-components": "^1.11.1",
+    "cross-fetch": "^3.0.6",
     "gatsby": "^2.26.1",
     "gatsby-plugin-react-helmet": "^3.4.0",
     "gatsby-plugin-styled-components": "^3.4.0",

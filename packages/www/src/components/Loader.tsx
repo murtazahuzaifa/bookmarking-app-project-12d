@@ -4,7 +4,7 @@ export default styled.div<{isLoading:boolean}>`
     &::after{content:"LOADING...."}
     display: ${({isLoading})=> isLoading? 'unset': 'none'};
     font-size: 40px; font-weight: bolder;
-    position: absolute;
+    position: fixed;
     top: 0; right:0;
     background-color: rgba(0,0,0,0.4);
     color: whitesmoke;
