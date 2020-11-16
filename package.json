@@ -1,0 +1,11 @@
+{
+  "name": "bookmarking-app-project-12d",
+  "description": "this is a bookmarking app created by using gatsby, netlify graphql serverless function and faunadb as database",
+  "version": "1.0.0",
+  "author": "Murtaza Hanzala",
+  "private":true,
+  "license": "MIT",
+  "workspaces":[
+    "packages/*"
+  ]
+}
